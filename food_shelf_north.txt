@@ -1,0 +1,6 @@
+volunteers,goal_bags,actual_bags,day_name
+10,40,21,Sunday
+12,33,14,Monday
+10,44,12,Tuesday
+15,50,50,Wednesday
+18,45,40
