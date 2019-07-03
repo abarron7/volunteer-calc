@@ -84,9 +84,7 @@ var VolunteersCalculator = module.exports = function(){
     // assigns the string(day_name) to the day number then displays the result on the console
     getResults: function(volunteers) {
       this.results = [];
-      this.result.sort(function(a, b) { 
-        return b.slice(0,4) - a.slice(0,4) 
-      });
+
       for(var i = 0; i< volunteers.length; i++) {
 
         var dayNames = this.data[i][3] || " "
@@ -107,13 +105,13 @@ if (require.main === module) {
   var readAndPrint = function(arg) {
     calculator.processFile(arg, function() {
       var volunteers = calculator.getVolunteersNeeded();
-      calculator.getResults(volunteers);
+      // calculator.getResults(volunteers);
+      return volunteers;
     });
   }
 
   if (process.argv.length === 3) {
-    readAndPrint(process.argv[2]);
-  } else {
-    console.log("Please follow the README instructions to run the program.");
+    // readAndPrint(process.argv[2]);
+    getResults(readAndPrint(process.argv[2]))
   }
 }
