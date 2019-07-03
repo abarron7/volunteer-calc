@@ -93,7 +93,17 @@ var VolunteersCalculator = module.exports = function(){
         this.results.push(result);
       }
       return this.results;
-    }
+    },
+    // function getResults(volunteers) {
+    //   var sorted = volunteers.sort(function(a, b) { 
+    //           return (b - a) 
+    //       }).map(function(el, i) { 
+    //           return `${el} additional volunteers are needed            on day ${i}`;
+    //   });    
+    //   return sorted;
+    // }
+    
+    // getResults(vols);
   }
 }
 
