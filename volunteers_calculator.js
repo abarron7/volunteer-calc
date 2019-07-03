@@ -83,20 +83,33 @@ var VolunteersCalculator = module.exports = function(){
 
     // assigns the string(day_name) to the day number then displays the result on the console
     getResults: function(volunteers) {
-      this.results = [];
-
-      for(var i = 0; i< volunteers.length; i++) {
-
-        var dayNames = this.data[i][3] || " "
-        var result = (volunteers[i]+" additional volunteers are needed on day "+i+" "+dayNames)
-        this.results.push(result)
-
-
-        console.log(result)
-      }
-      
-      return this.results;
+      // DONT NEED THIS, WE CLEVER
+      // this.results = [];
+      // lets sort first, and the sort() method returns an array, BUT LETS CHEAT AND build your string array IN THE SAME SPOT
+      var sorted = volunteers.sort(function(a, b) { 
+        // You may or may not need the slice portion if the cvolunteers[i] is a number data type
+           return b.slice(0,4) - a.slice(0,4) 
+        }).forEach(function(el, i) { 
+          console.log(el);
+           `${el[i]} additional volunteers are needed on day ${i}`;
+        });
+      return sorted;
     }
+    // getResults: function(volunteers) {
+    //   this.results = [];
+
+    //   for(var i = 0; i< volunteers.length; i++) {
+
+    //     var dayNames = this.data[i][3] || " "
+    //     var result = (volunteers[i]+" additional volunteers are needed on day "+i+" "+dayNames)
+    //     this.results.push(result)
+
+
+    //     console.log(result)
+    //   }
+      
+    //   return this.results;
+    // }
   }
 }
 
